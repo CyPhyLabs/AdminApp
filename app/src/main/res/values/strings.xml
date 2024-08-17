@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">AdminT2T</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_an_account_register_now">Don’t have an account? Register Now</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="welcome_back_glad_to_see_you_again">Welcome back! Glad to see you, Again!</string>
+    <string name="create_account">Create account</string>
+    <string name="back_arrow">Back arrow</string>
+    <string name="arrow_box">Arrow Box</string>
+    <string name="back_arrow_description">Back_arrow</string>
+    <string name="sign_in">Sign In</string>
+    <string name="welcome_home_illustration">welcome_home_illustration</string>
 </resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Welcome">
+
+    <LinearLayout
+        android:layout_width="411dp"
+        android:layout_height="467dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="110dp"
+        android:paddingBottom="153dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.552">
+
+        <LinearLayout
+            android:id="@+id/signInButton_OutsideBox"
+            android:layout_width="348dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="11dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/welcome_sign_in"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingVertical="21dp">
+
+            <Button
+                android:id="@+id/signInButton"
+                android:layout_width="319dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/black"
+                android:text="@string/sign_in"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/createAccountButton_OutsideBox"
+            android:layout_width="348dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="11dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/welcome_create_account"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingVertical="21dp">
+
+            <Button
+                android:id="@+id/createAccountButton"
+                android:layout_width="319dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/white"
+                android:minHeight="48dp"
+                android:onClick="CreateAccountButtonClick"
+                android:text="@string/create_account"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
