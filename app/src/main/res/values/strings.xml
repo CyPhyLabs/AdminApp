@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AdminT2T</string>
+    <string name="enter_the_verification_code_we_just_sent_on_your_email_address">Enter the verification code we just sent on your email address.</string>
+    <string name="didn_t_received_code_resend">Didn’t received code? Resend</string>
+    <string name="verify">Verify</string>
+    <string name="_3">3</string>
+    <string name="_1">1</string>
+    <string name="_5">5</string>
+    <string name="otp_verification">OTP Verification</string>
+    <string name="default_notification_channel_id">admin_t2t_channel</string>
 </resources>
