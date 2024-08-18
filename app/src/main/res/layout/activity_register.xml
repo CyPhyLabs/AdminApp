@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register"
+    android:id="@+id/RegisterFile">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:clipToPadding="false"
+                android:paddingTop="18dp"
+                android:paddingBottom="28dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="23dp"
+                        android:layout_marginBottom="42dp"
+                        android:layout_weight="1"
+                        android:text="Hello! Register to get started"
+                        android:textColor="#1E232C"
+                        android:textSize="30sp" />
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        xmlns:tools="http://schemas.android.com/tools"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="22dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/usernamebox"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="19dp"
+                        android:paddingVertical="23dp">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="First and Last Name"
+                            android:textColor="#8390A1"
+                            android:textSize="15sp"
+                            android:inputType="textPersonName"
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        xmlns:tools="http://schemas.android.com/tools"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="22dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/usernamebox"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="19dp"
+                        android:paddingVertical="22dp">
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="Email"
+                            android:textColor="#8390A1"
+                            android:textSize="15sp"
+                            android:inputType="textEmailAddress"
+                            android:digits="abcdefghijklmnopqrstuvwxyz@0123456789" />
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+                        xmlns:tools="http://schemas.android.com/tools"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="22dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/passwordbox"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="19dp"
+                        android:paddingVertical="21dp">
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="Password"
+                            android:textColor="#8390A1"
+                            android:textSize="15sp"
+                            android:inputType="textPassword"/>
+                    </LinearLayout>
+
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        xmlns:tools="http://schemas.android.com/tools"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="22dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/passwordbox"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="19dp"
+                        android:paddingVertical="21dp">
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="Confirm password"
+                            android:textColor="#8390A1"
+                            android:textSize="15sp"
+                            android:inputType="textPassword"/>
+                    </LinearLayout>
+
+
+                    <!--                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--                        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--                        xmlns:tools="http://schemas.android.com/tools"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginHorizontal="22dp"-->
+<!--                        android:layout_marginBottom="37dp"-->
+<!--                        android:background="@drawable/registerbuttonbox"-->
+<!--                        android:gravity="center_horizontal"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:paddingVertical="22dp">-->
+
+<!--                        <Button-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Register"-->
+<!--                            android:textColor="#FFFFFF"-->
+<!--                            android:textSize="15sp" />-->
+<!--                    </LinearLayout>-->
+
+                    <Button
+                        android:id="@+id/registerButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="22dp"
+                        android:layout_marginBottom="37dp"
+                        android:background="@color/black"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingVertical="22dp"
+                        android:text="Register"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/loginTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="61dp"
+                        android:text="Already have an account? Login Now"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
