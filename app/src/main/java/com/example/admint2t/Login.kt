@@ -24,11 +24,11 @@ class Login : AppCompatActivity() {
         val forgotPasswordTextView = findViewById<TextView>(R.id.forgotPasswordTextView)
         val backButton = findViewById<FrameLayout>(R.id.backButton)
 
+
         loginButton.setOnClickListener {
-            val email = emailEditText.text.toString()
-            val password = passwordEditText.text.toString()
-            // Handle login logic here
-            Toast.makeText(this, "Login clicked", Toast.LENGTH_SHORT).show()
+            //once the email and password is checked,navigating to AdminDashboard
+            val intent = Intent(this@Login, AdminDashboard::class.java)
+            startActivity(intent)
         }
 
         forgotPasswordTextView.setOnClickListener {
@@ -44,7 +44,8 @@ class Login : AppCompatActivity() {
         val spannableString = SpannableString(loginTextView.text)
         val clickableSpan = object : ClickableSpan() {
             override fun onClick(widget: View) {
-                Toast.makeText(this@Login, "Register Now has been pressed", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this@Login, Register::class.java)
+                startActivity(intent)
             }
         }
 

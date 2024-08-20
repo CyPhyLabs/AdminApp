@@ -55,6 +55,7 @@
                         android:paddingVertical="23dp">
 
                         <EditText
+                            android:id="@+id/firstNamelastNameEditText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="First and Last Name"
@@ -77,6 +78,7 @@
                         android:paddingVertical="22dp">
 
                         <EditText
+                            android:id="@+id/emailEditText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:hint="Email"
@@ -98,6 +100,7 @@
                         android:paddingVertical="21dp">
 
                         <EditText
+                            android:id="@+id/passwordEditText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:hint="Password"
@@ -119,6 +122,7 @@
                         android:paddingVertical="21dp">
 
                         <EditText
+                            android:id="@+id/confirmPasswordEditText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:hint="Confirm password"
@@ -173,5 +177,18 @@
             </ScrollView>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/loadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

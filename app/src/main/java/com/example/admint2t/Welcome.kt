@@ -19,8 +19,8 @@ class Welcome : AppCompatActivity() {
         }
 
         createAccountButton.setOnClickListener {
-            // Future navigation logic will go here
-            // Example: startActivity(Intent(this, CreateAccountActivity::class.java))
+            val intent = Intent(this, Register::class.java)
+            startActivity(intent)
         }
     }
 }
