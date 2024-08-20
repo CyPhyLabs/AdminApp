@@ -41,7 +41,7 @@ class SendMessage : AppCompatActivity() {
     }
 
     private fun sendMessageToBackend(title: String, recipientGroup: String, messageBody: String) {
-        // TODO: Implement the API call to send data to the backend
+        //Implement the API call to send data to the backend
     }
 
 
