@@ -13,14 +13,9 @@
         </DropdownSelection>
         <DialogSelection />
       </SelectionState>
-      
-      <SelectionState runConfigName="Register">
+      <SelectionState runConfigName="Welcome">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="SendMessage">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-
     </selectionStates>
   </component>
 </project>
