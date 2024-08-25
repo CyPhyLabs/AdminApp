@@ -21,6 +21,7 @@
     <string name="arrow_box">Arrow Box</string>
     <string name="back_arrow_description">Back_arrow</string>
     <string name="sign_in">Sign In</string>
+   <string name="subject">Subject</string>
     <string name="welcome_home_illustration">welcome_home_illustration</string>
     <string name="Register">Register</string>
     <string name="confirm_password">Confirm password</string>

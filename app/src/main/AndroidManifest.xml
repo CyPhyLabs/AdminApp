@@ -44,5 +44,11 @@
         <activity
             android:name=".SendMessage"
             android:exported="true" />
+
+
+        <activity
+            android:name=".Inbox"
+            android:exported="true" />
+
     </application>
 </manifest>
