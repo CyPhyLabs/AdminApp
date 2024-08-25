@@ -22,5 +22,12 @@
     <string name="back_arrow_description">Back_arrow</string>
     <string name="sign_in">Sign In</string>
     <string name="welcome_home_illustration">welcome_home_illustration</string>
- main
+    <string name="Register">Register</string>
+    <string name="confirm_password">Confirm password</string>
+   <string name="hello_register_to_get_started">Hello! Register to get started</string>
+   <string name="email">Email</string>
+   <string name="first_and_last_name">First and Last Name</string>
+   <string name="already_have_an_account_login_now">Already have an account? Login Now</string>
+   <string name="password">Password</string>
+   main
 </resources>

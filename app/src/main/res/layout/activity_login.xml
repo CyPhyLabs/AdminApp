@@ -48,16 +48,19 @@
             app:layout_constraintHorizontal_bias="0.04"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.023">
+            app:layout_constraintVertical_bias="0.029">
 
         </FrameLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="456dp"
+        android:layout_width="404dp"
+        android:layout_height="494dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteX="6dp">
 
         <TextView
             android:id="@+id/welcomeBackTextView"
@@ -77,26 +80,41 @@
             android:layout_marginHorizontal="22dp"
             android:layout_marginTop="12dp"
             android:background="@drawable/login_enter_email"
-            android:orientation="vertical"
+            android:baselineAligned="false"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:paddingHorizontal="19dp"
             android:paddingVertical="22dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.545"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/welcomeBackTextView">
 
-            <EditText
-                android:id="@+id/emailEditText"
-                android:layout_width="match_parent"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:autofillHints=""
-                android:hint="@string/enter_your_email"
-                android:inputType="textEmailAddress"
-                android:maxWidth="488dp"
-                android:minHeight="48dp"
-                android:textColor="#000000"
-                android:textColorHint="#616161"
-                android:textSize="15sp"
-                tools:ignore="VisualLintTextFieldSize" />
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                app:endIconMode="clear_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/welcomeBackTextView">
+
+                <EditText
+                    android:id="@+id/emailEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:hint="@string/enter_your_email"
+                    android:inputType="textEmailAddress"
+                    android:maxWidth="488dp"
+                    android:minHeight="48dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#546E7A"
+                    android:textSize="15sp"
+                    tools:ignore="VisualLintTextFieldSize" />
+
+            </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -106,6 +124,7 @@
             android:layout_marginHorizontal="22dp"
             android:layout_marginTop="12dp"
             android:background="@drawable/login_enter_password"
+            android:baselineAligned="false"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingHorizontal="19dp"
@@ -115,21 +134,31 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/enterEmail_OutsideBox">
 
-            <EditText
-                android:id="@+id/passwordEditText"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
-                android:autofillHints=""
-                android:hint="@string/enter_your_password"
-                android:inputType="textPassword"
-                android:maxWidth="488dp"
-                android:minHeight="48dp"
-                android:textColor="#000000"
-                android:textColorHint="#616161"
-                android:textSize="15sp"
-                tools:ignore="VisualLintTextFieldSize" />
+                app:endIconMode="password_toggle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enterEmail_OutsideBox">
+
+                <EditText
+                    android:id="@+id/passwordEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:hint="@string/enter_your_password"
+                    android:inputType="textPassword"
+                    android:maxWidth="488dp"
+                    android:minHeight="48dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#616161"
+                    android:textSize="15sp"
+                    tools:ignore="VisualLintTextFieldSize" />
+
+            </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
         <TextView
@@ -183,7 +212,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/loginPage_loginButton" />
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/loadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
