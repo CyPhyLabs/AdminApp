@@ -20,7 +20,7 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="#FFFFFF"
                 android:clipToPadding="false"
@@ -29,67 +29,20 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="0dp"
                         android:layout_marginHorizontal="23dp"
                         android:layout_marginBottom="42dp"
                         android:layout_weight="1"
-                        android:text="Hello! Register to get started"
+                        android:text="@string/hello_register_to_get_started"
                         android:textColor="#1E232C"
                         android:textSize="30sp" />
 
-                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
-                        xmlns:tools="http://schemas.android.com/tools"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="22dp"
-                        android:layout_marginBottom="12dp"
-                        android:background="@drawable/usernamebox"
-                        android:orientation="vertical"
-                        android:paddingHorizontal="19dp"
-                        android:paddingVertical="23dp">
-
-                        <EditText
-                            android:id="@+id/firstNamelastNameEditText"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="First and Last Name"
-                            android:textColor="#8390A1"
-                            android:textSize="15sp"
-                            android:inputType="textPersonName"
-                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
-                    </LinearLayout>
-
-                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
-                        xmlns:tools="http://schemas.android.com/tools"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="22dp"
-                        android:layout_marginBottom="12dp"
-                        android:background="@drawable/usernamebox"
-                        android:orientation="vertical"
-                        android:paddingHorizontal="19dp"
-                        android:paddingVertical="22dp">
-
-                        <EditText
-                            android:id="@+id/emailEditText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:hint="Email"
-                            android:textColor="#8390A1"
-                            android:textSize="15sp"
-                            android:inputType="textEmailAddress"
-                            android:digits="abcdefghijklmnopqrstuvwxyz@0123456789" />
-                    </LinearLayout>
-
-                    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-                        xmlns:tools="http://schemas.android.com/tools"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="22dp"
@@ -97,21 +50,88 @@
                         android:background="@drawable/passwordbox"
                         android:orientation="vertical"
                         android:paddingHorizontal="19dp"
-                        android:paddingVertical="21dp">
+                        android:paddingVertical="23dp">
 
-                        <EditText
-                            android:id="@+id/passwordEditText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:hint="Password"
-                            android:textColor="#8390A1"
-                            android:textSize="15sp"
-                            android:inputType="textPassword"/>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/firstNamelastNameEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:autofillHints=""
+                                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                android:hint="@string/first_and_last_name"
+                                android:inputType="textPersonName"
+                                android:minHeight="48dp"
+                                android:textColor="#8390A1"
+                                android:textColorHint="#546E7A"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
 
-                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
-                        xmlns:tools="http://schemas.android.com/tools"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="22dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/passwordbox"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="19dp"
+                        android:paddingVertical="22dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/emailEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:autofillHints=""
+                                android:digits="abcdefghijklmnopqrstuvwxyz@0123456789."
+                                android:hint="@string/email"
+                                android:inputType="textEmailAddress"
+                                android:minWidth="48dp"
+                                android:minHeight="48dp"
+                                android:textColor="#8390A1"
+                                android:textColorHint="#546E7A"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="22dp"
+                        android:layout_marginBottom="12dp"
+                        android:autofillHints=""
+                        android:background="@drawable/passwordbox"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="19dp"
+                        android:paddingVertical="21dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:endIconMode="password_toggle">
+
+                            <EditText
+                                android:id="@+id/passwordEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:autofillHints=""
+                                android:hint="@string/password"
+                                android:inputType="textPassword"
+                                android:minHeight="48dp"
+                                android:textColor="#000000"
+                                android:textColorHint="#757575"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="22dp"
@@ -121,57 +141,54 @@
                         android:paddingHorizontal="19dp"
                         android:paddingVertical="21dp">
 
-                        <EditText
-                            android:id="@+id/confirmPasswordEditText"
-                            android:layout_width="wrap_content"
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Confirm password"
-                            android:textColor="#8390A1"
-                            android:textSize="15sp"
-                            android:inputType="textPassword"/>
+                            app:endIconMode="password_toggle">
+
+                            <EditText
+                                android:id="@+id/confirmPasswordEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:autofillHints=""
+                                android:hint="@string/confirm_password"
+                                android:inputType="textPassword"
+                                android:minHeight="48dp"
+                                android:textColor="#8390A1"
+                                android:textColorHint="#546E7A"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
 
-
-                    <!--                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--                        xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--                        xmlns:tools="http://schemas.android.com/tools"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginHorizontal="22dp"-->
-<!--                        android:layout_marginBottom="37dp"-->
-<!--                        android:background="@drawable/registerbuttonbox"-->
-<!--                        android:gravity="center_horizontal"-->
-<!--                        android:orientation="vertical"-->
-<!--                        android:paddingVertical="22dp">-->
-
-<!--                        <Button-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="Register"-->
-<!--                            android:textColor="#FFFFFF"-->
-<!--                            android:textSize="15sp" />-->
-<!--                    </LinearLayout>-->
-
-                    <Button
-                        android:id="@+id/registerButton"
+                    <LinearLayout
+                        android:id="@+id/registerPage_registerButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="22dp"
-                        android:layout_marginBottom="37dp"
-                        android:background="@color/black"
+                        android:background="@drawable/login_login_button"
                         android:gravity="center_horizontal"
                         android:orientation="vertical"
-                        android:paddingVertical="22dp"
-                        android:text="Register"
-                        android:textColor="#FFFFFF"
-                        android:textSize="15sp" />
+                        android:paddingVertical="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.363"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <Button
+                            android:id="@+id/registerButton"
+                            android:layout_width="320dp"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:text="@string/Register"
+                            android:textColor="#FFFFFF"
+                            android:textSize="15sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/loginTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="61dp"
-                        android:text="Already have an account? Login Now"
+                        android:text="@string/already_have_an_account_login_now"
                         android:textSize="15sp" />
                 </LinearLayout>
             </ScrollView>

@@ -10,10 +10,12 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
- trisha-feature-test01
+
+        <option name="scale" value="0.112636253532499" />
+
         <option name="scale" value="0.7440231323242188" />
         <option name="scale" value="0.07559322033898305" />
- main
+
       </ProjectState>
     </option>
   </component>
