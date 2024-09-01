@@ -1,5 +1,6 @@
 package com.example.admint2t
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.SpannableString
@@ -106,6 +107,16 @@ class Login : AppCompatActivity() {
             apply()
         }
     }
+
+    companion object {
+        fun getBearerToken(context: Context): String? {
+            val sharedPreferences = context.getSharedPreferences("auth", MODE_PRIVATE)
+            return sharedPreferences.getString("access_token", null)
+        }
+    }
+
+
+
 
     private fun navigateToDashboard() {
         val intent = Intent(this@Login, AdminDashboard::class.java)

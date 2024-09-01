@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1046228269644",
+    "project_id": "reflecto-43fc2",
+    "storage_bucket": "reflecto-43fc2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1046228269644:android:969e88491d2b944477d2e9",
+        "android_client_info": {
+          "package_name": "com.example.admint2t"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDb-jBdh-bROb9y7g5sgoeguUFpOjoFiNY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
