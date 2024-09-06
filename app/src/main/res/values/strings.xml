@@ -30,5 +30,7 @@
    <string name="first_and_last_name">First and Last Name</string>
    <string name="already_have_an_account_login_now">Already have an account? Login Now</string>
    <string name="password">Password</string>
+    <string name="priority_format">Priority: %s</string>
+    <string name="error_fetching_notifications">Error fetching notifications: %s</string>
    main
 </resources>
