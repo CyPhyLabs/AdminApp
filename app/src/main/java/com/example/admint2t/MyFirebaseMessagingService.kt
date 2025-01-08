@@ -1,5 +1,4 @@
 package com.example.admint2t
-
 import android.Manifest
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -14,16 +13,18 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
-import com.example.admint2t.NotificationService
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import com.example.admint2t.Login.Companion.getBearerToken
-
-
+import com.example.admint2t.APISetup.APIService
 class MyFirebaseMessagingService : FirebaseMessagingService() {
 
     override fun onNewToken(token: String) {
         super.onNewToken(token)
         Log.d("FCM", "New token: $token")
         // Send the token to your server or store it locally
+
     }
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
@@ -38,10 +39,11 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             val messageId = remoteMessage.data["message_id"] ?: "unknown"
             Log.d("FCM", "Message Notification Data: $messageId")
 
-
             // Show notification
             showNotification(it.title ?: "New Message", it.body ?: "You have a new message.", messageId)
-            if (messageId != null) {
+
+            // Call API to mark the message as delivered
+            if (messageId != "unknown") {
                 someApiCall(messageId)
             }
         }
@@ -61,7 +63,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             }
         }
 
-        // Create an intent that opens the Welcome activity when the notification is tapped
+        // Create an intent that opens the Inbox activity when the notification is tapped
         val intent = Intent(this, Inbox::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             putExtra("message_id", messageId)
@@ -102,8 +104,16 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             }
         }
     }
+
     private fun someApiCall(messageId: String) {
         val token = getBearerToken(this)
-        NotificationService.markMessageAsDelivered(messageId, token)
+        if (token != null) {
+            CoroutineScope(Dispatchers.IO).launch {
+                val apiService = APIService()
+                apiService.markMessageAsDelivered(messageId, token)
+            }
+        } else {
+            Log.e("FCM", "No token found for API call")
+        }
     }
 }
