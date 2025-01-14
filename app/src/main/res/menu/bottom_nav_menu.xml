@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dashboardFragment"
+        android:title="@string/Dashboard"
+        android:icon="@drawable/home_icon"/>
+
+    <item
+        android:id="@+id/eventsFragment"
+        android:title="@string/Events"
+        android:icon="@drawable/event_icon"/>
+
+    <item
+        android:id="@+id/mirrorFragment"
+        android:title="@string/Mirror"
+        android:icon="@drawable/mirror_icon" />
+</menu>

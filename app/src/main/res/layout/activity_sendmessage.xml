@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#E8E9F3">
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/backButtontoDashboard"
@@ -20,23 +22,53 @@
         app:srcCompat="@drawable/back_arrow" />
 
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/messageCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="#777DA7"
+        app:layout_constraintTop_toBottomOf="@id/backButtontoDashboard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
     <!--creating a dropdown for the group of recipients.-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/titletextInputLayout"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.846">
+        app:layout_constraintVertical_bias="0.846"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:endIconMode="clear_text"
+        app:boxBackgroundColor="#E8E9F3"
+        app:boxBackgroundMode="filled"
+        app:errorEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/titleEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Title" />
+            android:hint="Title"
+            android:inputType="text"
+            android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -44,68 +76,93 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.355">
+        app:layout_constraintVertical_bias="0.355"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:errorEnabled="true"
+        app:boxBackgroundColor="#E8E9F3"
+        app:boxBackgroundMode="filled">
 
 
         <AutoCompleteTextView
             android:id="@+id/autoCompleteTextView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:inputType="none"
-            android:text="Choose recipients group" />
+            android:hint="Choose recipients group" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Priority"
+            android:textStyle="bold"
+            android:textColor="#E8E9F3"
 
-    <!--creating a place to add the body of the message.    -->
-<!--    <EditText-->
-<!--        android:id="@+id/editTextTextMultiLine"-->
-<!--        android:layout_width="404dp"-->
-<!--        android:layout_height="85dp"-->
-<!--        android:ems="10"-->
-<!--        android:gravity="start|top"-->
-<!--        android:hint="Type your message here"-->
-<!--        android:inputType="textMultiLine"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.428"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"-->
-<!--        app:layout_constraintVertical_bias="0.123" />-->
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"/>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/priorityChipGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleSelection="true"
+            app:selectionRequired="true"
+            app:chipSpacing="8dp"
+            android:gravity="center">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/lowPriorityChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Low Priority"
+                style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/highPriorityChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="High Priority"
+                style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
+        </com.google.android.material.chip.ChipGroup>
 
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="311dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="10dp"
-        android:text="Compose Message"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.085" />
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
-        app:layout_constraintVertical_bias="0.104">
+        app:layout_constraintVertical_bias="0.104"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:errorEnabled="true"
+        app:boxBackgroundColor="#E8E9F3">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/bodyMessageEditText"
@@ -115,20 +172,37 @@
             android:hint="Type your message here"
             android:inputType="textMultiLine"
             android:overScrollMode="always"
-            android:padding="10dp"
-            android:scrollbars="vertical" />
+            android:scrollbars="vertical"
+            android:textSize="16sp"
+            />
     </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/sendMessageButton"
+        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingStart="24dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="12dp"
         android:text="Send"
-        android:backgroundTint="@android:color/black"
+        android:textAllCaps="false"
+        app:cornerRadius="24dp"
+        app:elevation="4dp"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:backgroundTint="#272635"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutMessage" />
-
+        app:layout_constraintTop_toBottomOf="@+id/messageCardView"
+        app:layout_constraintVertical_bias="0.3" />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container_send"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

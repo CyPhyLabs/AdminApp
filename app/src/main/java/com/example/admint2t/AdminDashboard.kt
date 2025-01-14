@@ -1,28 +1,48 @@
 package com.example.admint2t
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import androidx.fragment.app.Fragment
+import com.example.admint2t.databinding.ActivityDashboardBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class AdminDashboard : AppCompatActivity() {
+    private lateinit var binding: ActivityDashboardBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dashboard)
+        binding = ActivityDashboardBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
+        val bottomNavigation: BottomNavigationView = binding.navView
 
-        val inboxButton = findViewById<Button>(R.id.btnInbox)
-        inboxButton.setOnClickListener {
-            val intent = Intent(this, Inbox::class.java)
-            startActivity(intent)
+        // Load AdminDashboardFragment initially
+        if (savedInstanceState == null) {
+            loadFragment(AdminDashboardFragment())
         }
 
-        val newMessageButton = findViewById<FloatingActionButton>(R.id.newMessageButton)
-        newMessageButton.setOnClickListener {
-            val intent = Intent(this@AdminDashboard, SendMessage::class.java)
-            startActivity(intent)
+        bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.dashboardFragment -> {
+                    loadFragment(AdminDashboardFragment())
+                    true
+                }
+                R.id.eventsFragment -> {
+                    loadFragment(EventsFragment())
+                    true
+                }
+                R.id.mirrorFragment -> {
+                    loadFragment(MirrorFragment())
+                    true
+                }
+                else -> false
+            }
         }
+    }
+
+    private fun loadFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainerView, fragment) // Match the ID in activity_dashboard.xml
+            .commit()
     }
 }
