@@ -32,5 +32,8 @@
    <string name="password">Password</string>
     <string name="priority_format">Priority: %s</string>
     <string name="error_fetching_notifications">Error fetching notifications: %s</string>
-   main
+    <string name="Dashboard">Dashboard</string>
+    <string name="Events">Events</string>
+    <string name="Mirror">Mirror\n</string>
+    main
 </resources>
